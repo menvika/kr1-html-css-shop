@@ -21,8 +21,17 @@
           <ul class="site-nav__list">
             <li><a href="index.html">Главная</a></li>
             <li><a href="catalog.html">Каталог</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
             <li><a href="dostav.html">Доставка и оплата</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li>
+              <button class="cart-button" type="button" aria-label="Корзина">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="19" cy="21" r="1"></circle>
+                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
+                </svg>
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -70,25 +79,48 @@
           <article class="product-card">
             <img src="images/fl1.jpg" class="product-card__image" alt="Весенний букет" />
             <h3>Весенний букет</h3>
-            <p>Весенний букет из тюльпанов и нарциссов</p>
             <p class="product-price">Цена: 7200 руб.</p>
-            <button class="button product-card__button" type="button" data-product="Товар 1">Заказать</button>
+            <div class="product-card__actions"> 
+              <button class="button product-card__button" type="button" data-product="Весенний букет"> Подробнее </button> 
+              <button class="cart-button" type="button" aria-label="Корзина">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="19" cy="21" r="1"></circle>
+                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
+                </svg>
+              </button>
+            </div>
           </article>
 
           <article class="product-card">
             <img src="images/fl2.jpg" class="product-card__image" alt="Моно-букет" />
             <h3>Моно-букет</h3>
-            <p>Пионы нежно-розовые премиум марин николос</p>
-            <p class="product-price">Цена: 14300 руб.</p>
-            <button class="button product-card__button" type="button" data-product="Товар 2">Заказать</button>
+            <p class="product-price">Цена: 8100 руб.</p>
+            <div class="product-card__actions"> 
+              <button class="button product-card__button" type="button" data-product="Моно-букет"> Подробнее </button> 
+             <button class="cart-button" type="button" aria-label="Корзина">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="19" cy="21" r="1"></circle>
+                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
+                </svg>
+              </button>
+            </div>
           </article>
 
           <article class="product-card">
             <img src="images/fl3.jpg" class="product-card__image" alt="Букет в корзине" />
             <h3>Букет в корзине</h3>
-            <p>Букет нежное ассорти в корзине</p>
-            <p class="product-price">Цена: 22700 руб.</p>
-            <button class="button product-card__button" type="button" data-product="Товар 3">Заказать</button>
+            <p class="product-price">Цена: 12700 руб.</p>
+            <div class="product-card__actions"> 
+              <button class="button product-card__button" type="button" data-product="Букет в корзине"> Подробнее </button> 
+              <button class="cart-button" type="button" aria-label="Корзина">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="19" cy="21" r="1"></circle>
+                    <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
+                  </svg>
+            </div>
           </article>
         </div>
       </section>
@@ -138,62 +170,5 @@
         <p>Дисциплина: Фронтенд и бэкенд разработка</p>
       </footer>
     </main>
-
-    <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-      <h2 id="order-dialog-title">Оформление заявки</h2>
-
-      <form class="order-form" id="order-form" action="#" method="post" novalidate>
-        <input id="selected-product" name="selected-product" type="hidden" />
-
-        <div class="form-field">
-          <label for="order-name">Имя</label>
-          <input id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required />
-        </div>
-
-        <div class="form-field">
-          <label for="order-email">E-mail</label>
-          <input id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required />
-        </div>
-
-        <div class="form-field">
-          <label for="order-phone">Телефон</label>
-          <input id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required />
-          <small>Формат: +7 (900) 000-00-00</small>
-        </div>
-
-        <div class="form-field">
-          <label for="order-date">Дата связи</label>
-          <input id="order-date" name="date" type="date" />
-        </div>
-
-        <div class="form-field">
-          <label for="order-topic">Тема заявки</label>
-          <select id="order-topic" name="topic" required>
-            <option value="">Выберите тему</option>
-            <option value="product">Заказ товара</option>
-            <option value="consultation">Консультация</option>
-            <option value="delivery">Доставка</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="order-comment">Комментарий</label>
-          <textarea id="order-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию"></textarea>
-        </div>
-
-        <div class="form-field form-field--checkbox">
-          <label>
-            <input id="order-agreement" name="agreement" type="checkbox" required /> Я согласен на обработку данных
-          </label>
-        </div>
-
-        <div class="form-actions">
-          <button type="button" id="close-order-dialog">Закрыть</button>
-          <button type="submit">Отправить заявку</button>
-        </div>
-      </form>
-    </dialog>
-
-    <p class="success-message" id="success-message" hidden>Форма успешно отправлена!</p>
   </body>
 </html>
