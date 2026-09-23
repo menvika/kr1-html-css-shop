@@ -11,16 +11,23 @@
     <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
     <meta property="og:image" content="https://menvika.github.io/kr1-html-css-shop/images/сatalog.jpg">
 </head>
-<body>
+<body data-page="contacts">
   <header>
-   <div class="site-header">
+    <div class="site-header">
         <nav class="site-nav" aria-label="Основная навигация">
           <a class="site-logo" href="index.html">FL</a>
           <ul class="site-nav__list">  
             <li><a href="index.html">Главная</a></li>
             <li><a href="catalog.html">Каталог</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
             <li><a href="dostav.html">Доставка и оплата</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <button class="cart-button" type="button" aria-label="Корзина">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="19" cy="21" r="1"></circle>
+                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
+                </svg>
+              </button>
           </ul>
         </nav>
       </div>
@@ -48,15 +55,115 @@
     <section class="section" id="feedback">
       <h2>Обратная связь</h2>
       <p>
-        Для отправки заявки используйте форму в модальном окне на главной странице.
+        Если у вас есть вопросы или вы хотите оформить заказ, нажмите кнопку ниже.
       </p>
-      <a class="button" href="index.html#contacts">Перейти к форме</a>
+
+      <button type="button" class="button" id="open-order-dialog">Написать нам</button>
     </section>
   </main>
+
+  <dialog class="order-dialog" id="contact-order-dialog" aria-labelledby="contact-order-dialog-title">
+    <h2 id="contact-order-dialog-title">Обратная связь</h2>
+
+    <form class="order-form" id="contact-order-form" action="#" method="post" novalidate>
+      <input id="selected-product" name="selected-product" type="hidden">
+
+      <div class="form-field">
+        <label for="order-name">Имя</label>
+        <input id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
+      </div>
+
+      <div class="form-field">
+        <label for="order-email">E-mail</label>
+        <input id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
+      </div>
+
+      <div class="form-field">
+        <label for="order-phone">Телефон</label>
+        <input id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+        <small>Формат: +7 (900) 000-00-00</small>
+      </div>
+
+      <div class="form-field">
+        <label for="order-date">Дата связи</label>
+        <input id="order-date" name="date" type="date">
+      </div>
+
+      <div class="form-field">
+        <label for="order-comment">Комментарий</label>
+        <textarea id="order-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию"></textarea>
+      </div>
+
+      <div class="form-field form-field--checkbox">
+        <label>
+          <input id="order-agreement" name="agreement" type="checkbox" required> Я согласен на обработку данных
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="close-contact-order-dialog">Закрыть</button>
+        <button type="submit">Отправить заявку</button>
+      </div>
+    </form>
+  </dialog>
 
   <footer>
     <p>&copy; 2026 Учебный проект. Все права защищены.</p>
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
+
+  <script>
+    const feedbackDialog = document.getElementById('contact-order-dialog');
+    const openFeedbackButton = document.getElementById('open-order-dialog');
+    const closeFeedbackButton = document.getElementById('close-contact-order-dialog');
+    const feedbackForm = document.getElementById('contact-order-form');
+    const productField = document.getElementById('contact-product');
+    const hiddenProductInput = document.getElementById('selected-product');
+
+    const selectedProductFromUrl = new URLSearchParams(window.location.search).get('product');
+
+    if (selectedProductFromUrl) {
+      if (hiddenProductInput) hiddenProductInput.value = selectedProductFromUrl;
+      if (productField) productField.value = selectedProductFromUrl;
+    }
+
+    if (openFeedbackButton && feedbackDialog) {
+      openFeedbackButton.addEventListener('click', () => {
+        if (selectedProductFromUrl && hiddenProductInput) {
+          hiddenProductInput.value = selectedProductFromUrl;
+        }
+        if (productField) {
+          productField.value = selectedProductFromUrl || 'Не выбран';
+        }
+        feedbackDialog.showModal();
+      });
+    }
+
+    if (closeFeedbackButton && feedbackDialog) {
+      closeFeedbackButton.addEventListener('click', () => {
+        feedbackDialog.close();
+      });
+    }
+
+    if (feedbackForm) {
+      feedbackForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        if (!feedbackForm.checkValidity()) {
+          feedbackForm.reportValidity();
+          return;
+        }
+
+        alert('Заявка отправлена!');
+        feedbackForm.reset();
+        if (productField) {
+          productField.value = selectedProductFromUrl || 'Не выбран';
+        }
+        if (feedbackDialog) {
+          feedbackDialog.close();
+        }
+      });
+    }
+  </script>
 </body>
 </html>
