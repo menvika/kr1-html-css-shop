@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Условия доставки и способы оплаты учебного интернет-магазина цветов.">
   <title>Доставка и оплата — Учебный интернет-магазин</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="images/icon.png" type="image/png">
   <script src="js/main.js" defer></script>
@@ -14,22 +15,27 @@
   <meta property="og:image" content="https://menvika.github.io/kr1-html-css-shop/images/сatalog.jpg">
 </head>
 <body>
+  <svg class="icon-sprite" aria-hidden="true" focusable="false" style="display: none">
+    <symbol id="icon-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="21" r="1"></circle>
+      <circle cx="19" cy="21" r="1"></circle>
+      <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
+    </symbol>
+  </svg>
   <header>
     <div class="site-header">
         <nav class="site-nav" aria-label="Основная навигация">
           <a class="site-logo" href="index.html">FL</a>
-          <ul class="site-nav__list">  
+          <ul class="site-nav__list">
             <li><a href="index.html">Главная</a></li>
             <li><a href="catalog.html">Каталог</a></li>
             <li><a href="dostav.html">Доставка и оплата</a></li>
             <li><a href="contacts.html">Контакты</a></li>
-            <button class="cart-button" type="button" aria-label="Корзина">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="19" cy="21" r="1"></circle>
-                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                </svg>
+            <li>
+              <button class="cart-button" type="button" aria-label="Корзина">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
               </button>
+            </li>
           </ul>
         </nav>
       </div>
@@ -38,7 +44,7 @@
   <main>
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a href="index.html">Главная</a>
-      <span>Доставка и оплата</span>
+      <span>/ Доставка и оплата</span>
     </nav>
 
     <section class="section">
@@ -56,10 +62,10 @@
       <div class="info-grid">
         <div class="info-card">
           <h3>В пределах города</h3>
-          <p>Доставим в течение 2–3 часов с момента подтверждения заказа, ежедневно с 9:00 до 21:00.</p>
+          <p>Доставим в течение 2–3 часов с момента подтверждения заказа, круглосуточно.</p>
           <span class="info-card__price">от 600 руб.</span>
         </div>
-
+    
         <div class="info-card">
           <h3>Пригород (до 20 км)</h3>
           <p>Доставка в течение дня, время согласовывается с получателем заранее по телефону.</p>

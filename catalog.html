@@ -5,36 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Каталог товаров учебного интернет-магазина.">
   <title>Каталог товаров — Учебный интернет-магазин</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/icon.png" type="image/png">
+  <script src="js/main.js" defer></script>
   <meta property="og:type" content="website">
   <meta property="og:title" content="Учебный интернет-магазин">
   <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
   <meta property="og:image" content="https://menvika.github.io/kr1-html-css-shop/images/сatalog.jpg">
-  <script src="js/main.js" defer></script>
 </head>
 <body data-page="catalog">
+  <svg class="icon-sprite" aria-hidden="true" focusable="false" style="display: none">
+    <symbol id="icon-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="21" r="1"></circle>
+      <circle cx="19" cy="21" r="1"></circle>
+      <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
+    </symbol>
+  </svg>
   <header>
     <div class="site-header">
         <nav class="site-nav" aria-label="Основная навигация">
           <a class="site-logo" href="index.html">FL</a>
-          <ul class="site-nav__list">  
+          <ul class="site-nav__list">
             <li><a href="index.html">Главная</a></li>
             <li><a href="catalog.html">Каталог</a></li>
             <li><a href="dostav.html">Доставка и оплата</a></li>
             <li><a href="contacts.html">Контакты</a></li>
-            <button class="cart-button" type="button" aria-label="Корзина">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="19" cy="21" r="1"></circle>
-                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                </svg>
+            <li>
+              <button class="cart-button" type="button" aria-label="Корзина">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
               </button>
+            </li>
           </ul>
         </nav>
       </div>
   </header>
 
   <main>
+    <main>
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="index.html">Главная</a>
+        <span>/ Каталог</span>  
+      </nav>
     <section class="section">
       <h1>Каталог товаров</h1>
       <p>
@@ -66,6 +78,14 @@
               <input type="checkbox" name="category" value="new">
               Новинки
             </label>
+            <label>
+              <input type="checkbox" name="category" value="type">
+              Моно-букеты
+            </label>
+            <label>
+              <input type="checkbox" name="category" value="basket">
+              Букеты в корзине
+            </label>
           </fieldset>
 
           <fieldset>
@@ -92,12 +112,8 @@
             <p class="product-price">Цена: 7200 руб.</p>
             <div class="product-card__actions">
               <button class="button product-card__details" type="button">Подробнее</button>
-              <button class="cart-button" type="button" aria-label="Корзина">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="19" cy="21" r="1"></circle>
-                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                </svg>
+              <button class="cart-button" type="button" aria-label="Добавить в корзину">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
               </button>
             </div>
           </article>
@@ -108,12 +124,8 @@
             <p class="product-price">Цена: 8100 руб.</p>
             <div class="product-card__actions">
               <button class="button product-card__details" type="button">Подробнее</button>
-              <button class="cart-button" type="button" aria-label="Корзина">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="19" cy="21" r="1"></circle>
-                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                </svg>
+              <button class="cart-button" type="button" aria-label="Добавить в корзину">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
               </button>
             </div>
           </article>
@@ -124,12 +136,8 @@
             <p class="product-price">Цена: 12700 руб.</p>
             <div class="product-card__actions">
               <button class="button product-card__details" type="button">Подробнее</button>
-              <button class="cart-button" type="button" data-product="Букет в корзине" aria-label="Добавить в корзину">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="19" cy="21" r="1"></circle>
-                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                </svg>
+              <button class="cart-button" type="button" aria-label="Добавить в корзину">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
               </button>
             </div>
           </article>
@@ -140,12 +148,8 @@
             <p class="product-price">Цена: 11500 руб.</p>
             <div class="product-card__actions">
               <button class="button product-card__details" type="button">Подробнее</button>
-              <button class="cart-button" type="button" data-product="Розовый букет" aria-label="Добавить в корзину">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="19" cy="21" r="1"></circle>
-                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                </svg>
+              <button class="cart-button" type="button" aria-label="Добавить в корзину">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
               </button>
             </div>
           </article>
@@ -156,12 +160,8 @@
             <p class="product-price">Цена: 9000 руб.</p>
             <div class="product-card__actions">
               <button class="button product-card__details" type="button">Подробнее</button>
-              <button class="cart-button" type="button" data-product="Дофаминовый букет" aria-label="Добавить в корзину">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="19" cy="21" r="1"></circle>
-                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                </svg>
+              <button class="cart-button" type="button" aria-label="Добавить в корзину">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
               </button>
             </div>
           </article>
@@ -172,12 +172,8 @@
             <p class="product-price">Цена: 9500 руб.</p>
             <div class="product-card__actions">
               <button class="button product-card__details" type="button">Подробнее</button>
-              <button class="cart-button" type="button" data-product="Моно-букет кустовых роз">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="19" cy="21" r="1"></circle>
-                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                </svg>
+              <button class="cart-button" type="button" aria-label="Добавить в корзину">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
               </button>
             </div>
           </article>
@@ -188,12 +184,8 @@
             <p class="product-price">Цена: 3500 руб.</p>
             <div class="product-card__actions">
               <button class="button product-card__details" type="button">Подробнее</button>
-              <button class="cart-button" type="button" data-product="Букет альстромерий">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="19" cy="21" r="1"></circle>
-                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                </svg>
+              <button class="cart-button" type="button" aria-label="Добавить в корзину">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
               </button>
             </div>
           </article>
@@ -204,12 +196,8 @@
             <p class="product-price">Цена: 20000 руб.</p>
             <div class="product-card__actions">
               <button class="button product-card__details" type="button">Подробнее</button>
-              <button class="cart-button" type="button" data-product="Ранунклюсы в корзине" >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="19" cy="21" r="1"></circle>
-                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                </svg>
+              <button class="cart-button" type="button" aria-label="Добавить в корзину">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
               </button>
             </div>
           </article>
@@ -223,17 +211,13 @@
       <button class="dialog-close" type="button" id="close-product-dialog" aria-label="Закрыть">×</button>
       <img class="product-dialog__image" id="product-dialog-image" src="" alt="">
       <div class="product-dialog__content">
-        <p class="product-dialog__tag">Букет</p>
+        <p class="dialog-eyebrow">Букет</p>
         <h2 id="product-dialog-title">Название букета</h2>
         <p id="product-dialog-description"></p>
         <div class="product-dialog__meta">
           <strong id="product-dialog-price">0 руб.</strong>
-          <button class="cart-button" type="button" id="product-dialog-order">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="9" cy="21" r="1"></circle>
-              <circle cx="19" cy="21" r="1"></circle>
-              <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-            </svg>
+          <button class="cart-button" type="button" id="product-dialog-order" aria-label="Добавить в корзину">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
           </button>
         </div>
       </div>
