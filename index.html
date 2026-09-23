@@ -14,6 +14,13 @@
     <meta property="og:image" content="https://menvika.github.io/kr1-html-css-shop/images/сatalog.jpg" />
   </head>
   <body>
+    <svg class="icon-sprite" aria-hidden="true" focusable="false" style="display: none">
+      <symbol id="icon-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="19" cy="21" r="1"></circle>
+        <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
+      </symbol>
+    </svg>
     <header>
       <div class="site-header">
         <nav class="site-nav" aria-label="Основная навигация">
@@ -25,11 +32,7 @@
             <li><a href="contacts.html">Контакты</a></li>
             <li>
               <button class="cart-button" type="button" aria-label="Корзина">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="19" cy="21" r="1"></circle>
-                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                </svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
               </button>
             </li>
           </ul>
@@ -83,11 +86,7 @@
             <div class="product-card__actions"> 
               <button class="button product-card__button" type="button" data-product="Весенний букет"> Подробнее </button> 
               <button class="cart-button" type="button" aria-label="Корзина">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="19" cy="21" r="1"></circle>
-                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                </svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
               </button>
             </div>
           </article>
@@ -99,11 +98,7 @@
             <div class="product-card__actions"> 
               <button class="button product-card__button" type="button" data-product="Моно-букет"> Подробнее </button> 
              <button class="cart-button" type="button" aria-label="Корзина">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="19" cy="21" r="1"></circle>
-                  <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                </svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
               </button>
             </div>
           </article>
@@ -115,11 +110,8 @@
             <div class="product-card__actions"> 
               <button class="button product-card__button" type="button" data-product="Букет в корзине"> Подробнее </button> 
               <button class="cart-button" type="button" aria-label="Корзина">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="19" cy="21" r="1"></circle>
-                    <path d="M2.5 3h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"></path>
-                  </svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-cart"></use></svg>
+              </button>
             </div>
           </article>
         </div>
@@ -165,7 +157,7 @@
         </table>
       </section>
 
-      <footer id="contacts">
+      <footer>
         <p>&copy; 2026 Учебный проект. Все права защищены.</p>
         <p>Дисциплина: Фронтенд и бэкенд разработка</p>
       </footer>
