@@ -987,7 +987,7 @@ img {
   font-size: 14px;
   color: var(--color-text);
 }
-
+/* вопросы*/
 .faq-list {
   margin-top: var(--space-lg);
   display: grid;
