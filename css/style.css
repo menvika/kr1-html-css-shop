@@ -242,7 +242,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: clamp(12px, 4vw, var(--space-xl));
+  padding: clamp(var(--radius-lg), 4vw, var(--space-xl));
   overflow: hidden;
 }
 
@@ -270,14 +270,14 @@ main {
   position: relative;
   z-index: 1;
   max-width: clamp(220px, 45%, 560px);
-  padding: clamp(12px, 3vw, 32px);
+  padding: clamp(var(--radius-lg), 3vw, 32px);
   text-align: left;
   color: var(--color-white);
   background: rgba(67, 39, 32, 0.65);
   backdrop-filter: blur(6px);
   border-left: 4px solid var(--color-primary);
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 var(--radius-lg) 35px rgba(0, 0, 0, 0.2);
 }
 
 .hero-content h1 {
@@ -315,7 +315,7 @@ main {
 
 .hero-content li a {
   display: inline-block;
-  padding: 7px 12px;
+  padding: 7px var(--radius-lg);
   color: var(--color-white);
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -385,7 +385,7 @@ main {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  box-shadow: 0 12px 28px rgba(101, 35, 43, 0.08);
+  box-shadow: 0 var(--radius-lg) 28px rgba(101, 35, 43, 0.08);
 }
 
 .services-table th,
@@ -540,7 +540,6 @@ img {
 }
 
 /* тостики */
-
 .toast {
   position: fixed;
   right: var(--space-lg);
@@ -574,9 +573,6 @@ img {
   height: var(--toast-image-size);
   object-fit: cover;
 }
-
-
-
 
 /* ===============================
    12. Дополнительный информационный блок
@@ -644,7 +640,7 @@ img {
 
 .dialog-eyebrow {
   margin: 0;
-  font-size: 12px;
+  font-size: var(--radius-lg);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -676,8 +672,8 @@ img {
 
 .dialog-close {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: var(--radius-lg);
+  right: var(--radius-lg);
   width: 34px;
   height: 34px;
   border: none;
@@ -713,12 +709,9 @@ img {
 .form-field select,
 .form-field textarea {
   width: 100%;
-
-  padding: 10px 12px;
-
+  padding: 10px var(--radius-lg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-
   font: inherit;
 }
 
@@ -728,9 +721,7 @@ img {
 
 .form-field small {
   display: block;
-
   margin-top: var(--space-xs);
-
   color: var(--color-text);
 }
 
@@ -764,7 +755,7 @@ img {
 
 .form-actions {
   display: flex;
-  gap: 12px;
+  gap: var(--radius-lg);
   margin-top: 20px;
 }
 
@@ -798,7 +789,7 @@ img {
 .contact-list__label {
   display: block;
   margin-bottom: 4px;
-  font-size: 12px;
+  font-size: var(--radius-lg);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -828,9 +819,7 @@ img {
 
 .breadcrumbs {
   max-width: var(--container-width);
-
   margin: 0 auto var(--space-md);
-
   font-size: 14px;
   color: var(--color-text);
 }
@@ -844,11 +833,7 @@ img {
   color: var(--color-text);
 }
 
-.breadcrumbs__current {
-  color: var(--color-primary-dark);
-  font-weight: 700;
-}
-
+.breadcrumbs__current,
 .breadcrumbs__product {
   color: var(--color-primary-dark);
   font-weight: 700;
@@ -866,25 +851,18 @@ img {
 
 .catalog-layout {
   max-width: var(--container-width);
-
   margin: 0 auto var(--space-xl);
-
   display: grid;
-
   grid-template-columns: 260px 1fr;
   grid-template-areas: "filters products";
-
   gap: var(--space-lg);
 }
 
 .catalog-filters {
   grid-area: filters;
-
   padding: var(--space-md);
-
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-
   background-color: var(--color-surface);
 }
 
@@ -921,12 +899,9 @@ img {
 
 .filters-form input[type="number"] {
   width: 100%;
-
   padding: 8px 10px;
-
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
-
   font: inherit;
 }
 
@@ -1093,7 +1068,7 @@ img {
 
 .success-message strong {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: var(--radius-lg);
   color: var(--color-primary-dark);
   font-size: 24px;
 }
@@ -1103,5 +1078,3 @@ img {
   font-size: 16px;
   color: var(--color-text);
 }
-
-
