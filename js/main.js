@@ -1,16 +1,33 @@
 (function () {
   "use strict";
 
+  var toastTimer = null;
+  
+  function showToast(message) {
+  var toast = document.getElementById("toast");
+  var toastText = document.getElementById("toast-text");
+  if (!toast || !toastText) return;
+
+  toastText.textContent = message;
+  toast.classList.add("is-visible");
+  window.clearTimeout(toastTimer);
+  toastTimer = window.setTimeout(function () {
+    toast.classList.remove("is-visible");
+  }, 2500);
+}
+
   function initCartButtons() {
-    document.querySelectorAll(".cart-button").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        btn.classList.add("is-added");
-        window.setTimeout(function () {
-          btn.classList.remove("is-added");
-        }, 600);
-      });
+  document.querySelectorAll(".cart-button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      btn.classList.add("is-added");
+      window.setTimeout(function () {
+        btn.classList.remove("is-added");
+      }, 600);
+      var card = btn.closest(".product-card");
+      showToast("Товар добавлен в корзину");
     });
-  }
+  });
+}
 
   function initProductDialog() {
     var dialog = document.getElementById("product-dialog");

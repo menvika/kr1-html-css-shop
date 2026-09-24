@@ -546,6 +546,47 @@ img {
   color: var(--color-white);
 }
 
+/* тостики */
+/* ===============================
+   Toast-уведомление
+   =============================== */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px 10px 10px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(67, 39, 32, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.toast__image {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+
+
 
 /* ===============================
    12. Дополнительный информационный блок
@@ -1042,3 +1083,4 @@ img {
   .open-order-dialog button {
    margin-left: var(--space-xl);
    }
+
