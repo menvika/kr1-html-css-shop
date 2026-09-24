@@ -33,6 +33,16 @@
 
   /* Размеры */
   --container-width: 1100px;
+  --icon-button-size: 42px;
+  --icon-size: 18px;
+  --product-image-height: 300px;
+  --product-image-height-md: 180px;
+  --product-image-height-sm: 160px;
+  --toast-image-size: 40px;
+  --toast-padding: 10px 20px 10px 10px;
+  --gap-sm: 10px;
+  --dialog-pop-translate: 10px;
+  --shadow-xl: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -110,7 +120,7 @@ footer p:last-child {
 }
 
 .site-header {
-  max-width: 1100px;
+  max-width: var(--container-width);
   margin: 0 auto;
 }
 
@@ -164,8 +174,8 @@ footer p:last-child {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: var(--icon-button-size);
+  height: var(--icon-button-size);
   padding: 0;
   border: 1px solid var(--color-border);
   border-radius: 50%;
@@ -176,8 +186,8 @@ footer p:last-child {
 }
 
 .cart-button svg {
-  width: 18px;
-  height: 18px;
+  width: var(--icon-size);
+  height: var(--icon-size);
   stroke: currentColor;
   fill: none;
   stroke-width: 2;
@@ -261,23 +271,17 @@ main {
   z-index: 1;
   max-width: clamp(220px, 45%, 560px);
   padding: clamp(12px, 3vw, 32px);
-
   text-align: left;
   color: var(--color-white);
-
   background: rgba(67, 39, 32, 0.65);
-
   backdrop-filter: blur(6px);
-
   border-left: 4px solid var(--color-primary);
   border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
 }
 
 .hero-content h1 {
   margin: 0 0 16px;
-
   font-size: 16px;
   line-height: 1.6;
   font-weight: 600;
@@ -285,10 +289,8 @@ main {
 
 .hero-content p {
   margin: 0 0 20px;
-
   font-size: 16px;
   line-height: 1.6;
-
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -313,14 +315,11 @@ main {
 
 .hero-content li a {
   display: inline-block;
-
   padding: 7px 12px;
   color: var(--color-white);
   background: rgba(255, 255, 255, 0.15);
-
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
-
   text-decoration: none;
   font-size: 13px;
   transition: 0.2s;
@@ -340,19 +339,13 @@ main {
   display: inline-block;
 
   padding: 11px 22px;
-
   color: var(--color-white);
   background-color: var(--color-primary);
-
   text-decoration: none;
-
   border: none;
   border-radius: 20px;
-
   cursor: pointer;
-
   font-weight: 600;
-
   transition: 0.2s;
 }
 
@@ -483,7 +476,7 @@ main {
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
+  gap: var(--space-xl);
 }
 
 img {
@@ -494,7 +487,7 @@ img {
 
 .product-card img {
   width: 100%;
-  height: 300px;
+  height: var(--product-image-height);
   object-fit: cover;
   border-radius: calc(var(--radius-md) - 2px);
 }
@@ -515,13 +508,13 @@ img {
 
 @media (max-width: 900px) {
   .product-card img {
-    height: 180px;
+    height: var(--product-image-height-md);
   }
 }
 
 @media (max-width: 600px) {
   .product-card img {
-    height: 160px;
+    height: var(--product-image-height-sm);
   }
   .products-grid {
     grid-template-columns: 1fr;
@@ -532,7 +525,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: var(--gap-sm);
   margin-top: var(--space-md);
 }
 
@@ -556,13 +549,13 @@ img {
   display: flex;
   align-items: center;
   gap: var(--radius-lg);
-  padding: 10px 20px 10px 10px;
+  padding: var(--toast-padding);
   border-radius: var(--radius-md);
   background-color: var(--color-primary-dark);
   color: var(--color-white);
   font-size: 14px;
   font-weight: 600;
-  box-shadow: 0 12px 30px rgba(67, 39, 32, 0.25);
+  box-shadow: var(--shadow-xl);
   opacity: 0;
   visibility: hidden;
   transform: translateY(var(--space-md));
@@ -577,8 +570,8 @@ img {
 
 .toast__image {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: var(--toast-image-size);
+  height: var(--toast-image-size);
   object-fit: cover;
 }
 
@@ -1078,7 +1071,7 @@ img {
    22. Контакты
    =============================== */
 
-  .open-order-dialog button {
+.open-order-dialog button {
    margin-left: var(--space-xl);
    }
 
