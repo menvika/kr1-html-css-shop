@@ -440,8 +440,8 @@ main {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
+  width: var(--radius-lg);
+  height: var(--radius-lg);
   border-radius: 50%;
   background: var(--color-primary);
   box-shadow: 0 2px 6px rgba(102, 34, 40, 0.18);
@@ -547,18 +547,15 @@ img {
 }
 
 /* тостики */
-/* ===============================
-   Toast-уведомление
-   =============================== */
 
 .toast {
   position: fixed;
-  left: 50%;
-  bottom: 24px;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
   z-index: 100;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--radius-lg);
   padding: 10px 20px 10px 10px;
   border-radius: var(--radius-md);
   background-color: var(--color-primary-dark);
@@ -568,14 +565,14 @@ img {
   box-shadow: 0 12px 30px rgba(67, 39, 32, 0.25);
   opacity: 0;
   visibility: hidden;
-  transform: translate(-50%, 12px);
+  transform: translateY(var(--space-md));
   transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
 }
 
 .toast.is-visible {
   opacity: 1;
   visibility: visible;
-  transform: translate(-50%, 0);
+  transform: translateY(0);
 }
 
 .toast__image {
@@ -610,6 +607,7 @@ img {
   width: min(100% - 32px, 560px);
   padding: 0;
   border: none;
+  position: relative;
   border-radius: var(--radius-lg);
   background: var(--color-bg);
   box-shadow: 0 25px 60px rgba(67, 39, 32, 0.28);
@@ -1083,4 +1081,34 @@ img {
   .open-order-dialog button {
    margin-left: var(--space-xl);
    }
+
+.success-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 80%;
+  padding: 24px;
+  text-align: center;
+  background-color: var(--color-white);
+  color: var(--color-primary-dark);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.success-message strong {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--color-primary-dark);
+  font-size: 24px;
+}
+
+.success-message p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--color-text);
+}
+
 
